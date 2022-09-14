@@ -1,12 +1,9 @@
 use bigdecimal::{BigDecimal, ToPrimitive};
-use core::{num, panic};
-use fitparser;
+use core::panic;
 use fitparser::profile::MesgNum;
 use geo_types::Point;
 use gpx::{Gpx, GpxVersion, Track, TrackSegment, Waypoint};
-use std::fs::File;
-use std::fs::{self, DirEntry};
-use std::io::{Read, Write};
+use std::fs::{self, File};
 use std::path::{Path, PathBuf};
 use std::str::FromStr;
 
@@ -66,15 +63,16 @@ fn parse_file(path: PathBuf) {
                     println!("{:?}, {:?}", latitude, longitude);
                     panic!();
                 }
-                ()
             }
             _ => {}
         };
     }
 
     track.segments.push(segment);
-    let mut data: Gpx = Default::default();
-    data.version = GpxVersion::Gpx11;
+    let mut data: Gpx = Gpx {
+        version: GpxVersion::Gpx11,
+        ..Default::default()
+    };
     data.tracks.push(track);
 
     let file =
