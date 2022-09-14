@@ -1,0 +1,12 @@
+[package]
+name = "fit-decoder"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fitparser = "0.5"
+bigdecimal = "0.3"
+geo-types = "0.7"
+gpx = "0.8"

@@ -1,0 +1,6 @@
+- download everything
+- find out that some don't have GPS traces
+- figure out what kind of files have GPS traces (activites)
+- find the ones with activities in them
+- figure out how GPS trace is represented
+- find out Lat/Long are in semicircles, so figure out what those are
